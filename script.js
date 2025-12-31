@@ -1,11 +1,14 @@
-const container = document.querySelector('.container');
-const registerBtn = document.querySelector('.register-btn');
-const loginBtn = document.querySelector('.login-btn');
+const menuToggle = document.getElementById('mobile-menu');
+const navMenu = document.getElementById('navMenu');
 
-registerBtn.addEventListener('click', () => {
-    container.classList.add('active');
+menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
 });
 
-loginBtn.addEventListener('click', () => {
-    container.classList.remove('active');
+
+const navLinks = document.querySelectorAll('.nav-links a');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+    });
 });
